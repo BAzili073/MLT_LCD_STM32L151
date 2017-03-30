@@ -10,7 +10,7 @@
 
 #define GPIO_HIGH(PORT, PIN) (PORT->BSRR) = (PIN)
 #define GPIO_LOW(PORT, PIN) (PORT->BSRR) = ((PIN)<<16)
-#define GPIO_READ(PORT, PIN) ((PORT->IDR)&PIN)
+#define GPIO_READ(PORT, PIN) (PORT->IDR)&(PIN)
 #define GPIO_TOGGLE(PORT, PIN) ((PORT)->ODR) ^= (PIN)
 
 

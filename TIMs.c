@@ -1,5 +1,34 @@
 #include "TIMs.h"
 #include "defines.h"
+int secons = 0;
+int min = 0;
+int dsec = 0;
+void TIM2_Init(void){
+	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+	TIM2->CR1 |= TIM_CR1_ARPE;
+	TIM2->DIER |= TIM_DIER_UIE;
+	TIM2 -> ARR = 100;//100;
+	TIM2 -> PSC = 16000-1;//65530;//16000 - 1;
+	NVIC_EnableIRQ(TIM2_IRQn);
+	TIM2-> CR1 |= TIM_CR1_CEN;
+}
+
+void TIM2_IRQHandler(void)
+{
+	LED_RED_PORT->ODR ^= LED_RED_PIN;
+	TIM2 -> SR &= ~TIM_SR_UIF;
+	dsec++;
+	if (dsec == 10){
+		dsec = 0;
+		secons++;
+		if (secons > 59){
+			min++;
+			secons = 0;
+		}
+	}
+}
+
+
 void TIM6_Init(void){
 	RCC->APB1ENR |= RCC_APB1ENR_TIM6EN;
 	TIM6->CR1 |= TIM_CR1_OPM;

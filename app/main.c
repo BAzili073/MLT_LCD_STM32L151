@@ -4,21 +4,19 @@
 #include "TIMs.h"
 #include "Clock.h"
 #include "LCD_func.h"
-char FULL_CIRC[8]  = {0x3C,0x7E,0xFF,0xFF,0xFF,0xFF,0x7E,0x3C};
-char EMPTY_CIRC[8]  = {0x3C,0x42,0x81,0x81,0x81,0x81,0x42,0x3C};
+#include "Keyboard.h"
+#include "chars.h"
 
-char STANDUP1[8]  = {0xC0,0xCE,0xF1,0xF1,0x51,0x4E,0xE0,0xE0};
-char STANDUP2[8]  = {0xE0,0xC0,0x40,0x40,0x40,0x40,0x00,0x00};
-char STANDUP3[8]  = {0xF8,0xFF,0x0F,0xF9,0xF9,0x01,0x01,0x00};
 int main(void){
 
 	Clock_init();
 	TIM6_Init();
+	TIM2_Init();
 
 	RCC->AHBENR |= RCC_AHBENR_GPIOAEN;
 	RCC->AHBENR |= RCC_AHBENR_GPIOBEN;
 	RCC->AHBENR |= RCC_AHBENR_GPIOCEN;
-
+	KB_init();
 	GPIO_InitTypeDef initSrtuct;
 
 			initSrtuct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -27,10 +25,35 @@ int main(void){
 			initSrtuct.Speed = GPIO_SPEED_HIGH;
 			HAL_GPIO_Init(LED_RED_PORT, &initSrtuct);
 
+
 			while_time(100);
 			MTLCD_Init();
 			while_time(1000);
 			MTLCD_OnOff(1);
+			MTLCD_CLR();
+
+			MTLCD_SET_HALF(1,0);
+			int i;
+			for(i = 0;i<8;i = i + 1){
+				MTLCD_set_x(0);
+				MTLCD_set_y(i);
+				int y;
+				for(y = 0;y<64;y++){
+					MTLCD_DATA(HARD[i][y]);
+
+				}
+			}
+			MTLCD_SET_HALF(0,1);
+			for(i = 0;i<8;i++){
+				MTLCD_set_x(0);
+				MTLCD_set_y(i);
+				int y;
+				for(y = 0;y<8;y++){
+					MTLCD_PRINT_BLOCK(FL[y + (i*8)]);
+				}
+			}
+//			while(1);
+//			for (i = 0; i<3000;i++) while_time(1000);
 			MTLCD_CLR();
 			MTLCD_SET_HALF(1,1);
 			MTLCD_set_x(1);
@@ -53,15 +76,74 @@ int main(void){
 			MTLCD_set_x(1);
 			MTLCD_set_y(6);
 			MTLCD_PRINT_BLOCK(STANDUP3);
-
+			MTLCD_SET_HALF(1,0);
+			MTLCD_set_x(1);
+			MTLCD_set_y(4);
+//			int i;
+			for (i = 0;i<8;i++){
+				MTLCD_PRINT_BLOCK(numbers[i]);
+			}
+			MTLCD_SET_HALF(0,1);
+			MTLCD_set_x(1);
+			MTLCD_set_y(4);
+			for (i = 8;i<10;i++){
+				MTLCD_PRINT_BLOCK(numbers[i]);
+			}
+			MTLCD_SET_HALF(0,1);
+			MTLCD_set_x(1);
+			MTLCD_set_y(4);
+			for (i = 8;i<10;i++){
+				MTLCD_PRINT_BLOCK(numbers[i]);
+			}
+			MTLCD_SET_HALF(1,0);
+			MTLCD_set_x(18);
+			MTLCD_set_y(5);
+			for (i = 0;i<4;i++){
+				MTLCD_PRINT_BLOCK(BIG_CIRC[i]);
+			}
+			MTLCD_set_x(18);
+			MTLCD_set_y(6);
+			for (i = 4;i<8;i++){
+				MTLCD_PRINT_BLOCK(BIG_CIRC[i]);
+			}
+			MTLCD_SET_HALF(0,1);
+			MTLCD_set_x(18);
+			MTLCD_set_y(5);
+			for (i = 0;i<2;i++){
+				MTLCD_PRINT_BLOCK(DOWN_MAN[i]);
+			}
+			char old = 4;
     while(1)
     {
-    	int i;
-    	for (i = 0;i<10;i++){
-    		set_timeout(100);
-    		while_timeout();
-    	}
-    	LED_RED_PORT->ODR ^= LED_RED_PIN;
+    	MTLCD_SET_HALF(1,1);
+		MTLCD_set_x(1);
+		MTLCD_set_y(7);
+		MTLCD_PRINT_BLOCK(numbers[min/10]);
+		MTLCD_PRINT_BLOCK(numbers[min%10]);
+		MTLCD_DATA(0x00);
+		MTLCD_DATA(0x6C);
+		MTLCD_DATA(0x00);
+		MTLCD_PRINT_BLOCK(numbers[secons/10]);
+		MTLCD_PRINT_BLOCK(numbers[secons%10]);
+		MTLCD_DATA(0xC0);
+		MTLCD_DATA(0xC0);
+		MTLCD_DATA(0x00);
+		MTLCD_PRINT_BLOCK(numbers[dsec]);
 //    	MTLCD_CLR();
+		char u = KB_check();
+		if ((u != 255)){
+			if (old == 4){
+				MTLCD_SET_HALF(0,1);
+				MTLCD_set_x(50);
+				MTLCD_set_y(4);
+				int i;
+				for(i = 0;i<5;i++){
+					MTLCD_DATA(symb[u][i]);
+				}
+			}
+			old = 0;
+		}else{
+			if (old < 4) old++;
+		}
     }
 }
