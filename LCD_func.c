@@ -36,10 +36,53 @@
 
 
 
+extern unsigned char CURRENT_STATE;
+extern unsigned char CURRENT_MODE;
+extern unsigned char MAX_SHOT;
+extern unsigned char TARGET[5];
 void MTLCD_set_DB_port(unsigned char cmd);
 void MTLCD_accept_DB_port();
 void MTLCD_set_DB_port(unsigned char cmd);
 
+
+void MTLCD_DISPLAY(){
+	switch(CURRENT_STATE){
+	case CURRENT_STATE_START:
+
+	break;
+	case CURRENT_STATE_DEFAULT:
+		MTLCD_PRINT_STRING(20,0,"Основная:");
+		if (CURRENT_MODE == CURRENT_MODE_AUTO) MTLCD_PRINT_STRING(113,0,"А");
+		else if (CURRENT_MODE == CURRENT_MODE_HAND) MTLCD_PRINT_STRING(113,0,"Р");
+		MTLCD_PRINT_NUMBER(120,0,MAX_SHOT);
+		MTLCD_print_targets();
+
+	break;
+	case CURRENT_STATE_MENU_0:
+		MTLCD_PRINT_STRING(20,0,"Настройки:");
+		MTLCD_PRINT_STRING(0,1,"A:Режим - ");
+		if (CURRENT_MODE == CURRENT_MODE_AUTO) MTLCD_PRINT_STRING(85,1,"Автом.");
+		else if (CURRENT_MODE == CURRENT_MODE_HAND) MTLCD_PRINT_STRING(85,1,"Ручной");
+		MTLCD_PRINT_STRING(0,2,"B:Выстрелов- ");
+		MTLCD_PRINT_NUMBER(85,2,MAX_SHOT);
+
+
+
+		MTLCD_PRINT_STRING(0,7,"* - Принять");
+	break;
+	}
+}
+
+void MTLCD_print_targets(){
+	MTLCD_set_cord(0,7);
+	int i;
+	for (i = 0;i<5;i++){
+		if (TARGET[i]) MTLCD_PRINT_BLOCK(FULL_CIRC);
+		else MTLCD_PRINT_BLOCK(EMPTY_CIRC);
+		MTLCD_DATA(0x00);
+		MTLCD_DATA(0x00);
+	}
+}
 void MTLCD_accept_DB_port(){
 	  GPIO_HIGH(MTLCD_E_PORT,MTLCD_E_PIN); //cmd_port |= (1<<E);//устанавливаем "1" на E
 	  while_time(1);
@@ -270,14 +313,25 @@ void MTLCD_PRINT_STRING(unsigned char x, unsigned char y, char * text){
 	}
 }
 
-void MTLCD_PRINT_NUMBER(unsigned char x, unsigned char y,unsigned char num){
-char num_t[3];
-num_t[0] = num/100;
-num_t[1] = (num - num_t[0]*100)/10;
-num_t[2] = (num - num_t[0]*100 - num_t[1]*10);
-int i;
-for(i = 0;i<3;i++) num_t[i] = num_t[i] + '0';
-MTLCD_PRINT_STRING(x,y,num_t);
+void MTLCD_PRINT_NUMBER(unsigned char x, unsigned char y,unsigned int num){
+//char num_t[3];
+//num_t[0] = num/100;
+//num_t[1] = (num - num_t[0]*100)/10;
+//num_t[2] = (num - num_t[0]*100 - num_t[1]*10);
+//int i;
+//for(i = 0;i<3;i++) num_t[i] = num_t[i] + '0';
+if (num >= 10) {
+	MTLCD_PRINT_NUMBER(x,y,(num/10));
+}
+int num_t = num;
+while (num_t>=10){
+	x = x + 7;
+	num_t = num_t/10;
+}
+char numer[2];
+numer[0] = (num%10) + '0';
+numer[1] = 0;
+MTLCD_PRINT_STRING(x,y,numer);
 }
 //void MTLCD_PRINT_TIME(char x, char y, int sec){
 //  		MTLCD_SET_HALF(1,1);

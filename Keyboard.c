@@ -1,6 +1,6 @@
 #include "Keyboard.h"
 #include "defines.h"
-
+#include "LCD_func.h"
 
 #define KB_DONT_PRESS 255
 
@@ -26,6 +26,11 @@
 #define KB_INP_2_PIN GPIO_PIN_13
 #define KB_INP_3_PIN GPIO_PIN_14
 #define KB_INP_4_PIN GPIO_PIN_15
+
+extern unsigned char CURRENT_STATE;
+extern unsigned char CURRENT_MODE;
+extern unsigned char MAX_SHOT;
+
 
 typedef struct KB_OUT_obj{
 	GPIO_TypeDef * port;
@@ -83,6 +88,41 @@ void KB_init(){
 //		}
 //	}
 }
+
+void KB_work(){
+	static char  last_key = 255;
+	char key = KB_check();
+	if (key != last_key){
+		last_key = key;
+		if ((key != KB_DONT_PRESS)){
+			switch (CURRENT_STATE){
+				case CURRENT_STATE_START:
+				break;
+				case CURRENT_STATE_DEFAULT:
+					if (key == '*') {
+						MTLCD_CLR();
+						CURRENT_STATE = CURRENT_STATE_MENU_0;
+					}
+				break;
+				case CURRENT_STATE_MENU_0:
+						if (key == 'A') {
+							CURRENT_MODE++;
+							if (CURRENT_MODE == 2) CURRENT_MODE = 0;
+						}
+						if (key == 'B') {
+							if (MAX_SHOT == 5) MAX_SHOT = 8;
+							else MAX_SHOT = 5;
+						}
+						if (key == '*') {
+							MTLCD_CLR();
+							CURRENT_STATE = CURRENT_STATE_DEFAULT;
+						}
+				break;
+			}
+		}
+	}
+}
+
 char KB_check(){
 	int i;
 	for (i = 0;i<KB_MAX_OUT;i++){
@@ -90,6 +130,7 @@ char KB_check(){
 		int y;
 		for (y = 0;y<KB_MAX_OUT;y++){
 				if (GPIO_READ((KB_INP[y].port),(KB_INP[y].pin))){
+					GPIO_LOW((KB_OUT[i].port),(KB_OUT[i].pin));
 					return KB_keys[i][y];
 				}
 			}

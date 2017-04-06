@@ -6,6 +6,12 @@
 #include "LCD_func.h"
 #include "Keyboard.h"
 
+
+unsigned char CURRENT_STATE = CURRENT_STATE_DEFAULT;
+unsigned char CURRENT_MODE = CURRENT_MODE_AUTO;
+unsigned char MAX_SHOT = 5;
+unsigned char TARGET[5] = {0,0,0,0,0};
+
 int main(void){
 
 	Clock_init();
@@ -20,24 +26,16 @@ int main(void){
 			MTLCD_CLR();
 			MTLCD_SET_HALF(1,0);
 			int i;
-			char old = 4;
+
     while(1)
     {
+    	MTLCD_DISPLAY();
 //    	MTLCD_PRINT_STRING(1,1,"ABGT");
 //    	MTLCD_CLR();
-    	MTLCD_PRINT_STRING(0,0,"Введите номер спорстмена: ");
-    	MTLCD_PRINT_NUMBER(50,1,137);
-    	MTLCD_PRINT_STRING(0,2,"Вы находитесь на 3 рубеже");
+
     	//    	MTLCD_CLR();
-		char u[1];
-		u[0] = KB_check();
-		if ((u[0] != 255)){
-			if (old == 4){
-					MTLCD_PRINT_STRING(1,5,u);
-			}
-			old = 0;
-		}else{
-			if (old < 4) old++;
-		}
+
+    	KB_work();
+
     }
 }
