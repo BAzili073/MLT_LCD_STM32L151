@@ -3,6 +3,7 @@
 #include "LCD_func.h"
 #include "defines.h"
 #include "TIMs.h"
+#include "chars.h"
 
 #define MTLCD_DB0_PORT GPIOA
 #define MTLCD_DB0_PIN GPIO_PIN_11
@@ -199,6 +200,16 @@ void MTLCD_set_y(unsigned char pos_y){
   MTLCD_accept_DB_port();
 }
 
+void MTLCD_set_cord(unsigned char x,unsigned char y){
+if (x >= 64) {
+	x = x - 64;
+	MTLCD_SET_HALF(0,1);
+}else{
+	MTLCD_SET_HALF(1,0);
+}
+MTLCD_set_x(x);
+MTLCD_set_y(y);
+}
 
 void MTLCD_CLR(){
 	MTLCD_SET_HALF(1,1);
@@ -216,6 +227,8 @@ void MTLCD_SET_HALF(char f,char s){
 	f ? (GPIO_HIGH(MTLCD_E1_PORT,MTLCD_E1_PIN)) : (GPIO_LOW(MTLCD_E1_PORT,MTLCD_E1_PIN));
 	s ? (GPIO_HIGH(MTLCD_E2_PORT,MTLCD_E2_PIN)) : (GPIO_LOW(MTLCD_E2_PORT,MTLCD_E2_PIN));
 }
+
+
 void MTLCD_PRINT_BLOCK(char * block){
 	int i;
 	for(i = 0;i<8;i++){
@@ -223,7 +236,149 @@ void MTLCD_PRINT_BLOCK(char * block){
 	}
 }
 
+void MTLCD_PRINT_CHAR(unsigned char x, unsigned char y,char * block){
+
+	int i;
+	static int cur_half = 0;
+	MTLCD_set_cord(x,y);
+	for(i = 0;i<5;i++){
+		int x_cur = x + i;
+		if (x_cur == 64){
+			MTLCD_set_cord(x_cur,y);
+		}else if (x_cur == 128){
+			MTLCD_set_cord(0,(y+1));
+		}
+		MTLCD_DATA(block[i]);
+	}
+}
+
+void MTLCD_PRINT_STRING(unsigned char x, unsigned char y, char * text){
+	int i = 0;
+	char ch;
+	while(text[i]){
+		ch = text[i];
+		if(ch<0x90) ch = ch - 0x20;
+		else ch = ch - 0x60;
+		if (x > 120){
+			x = 0;
+			y++;
+		}
+    	MTLCD_PRINT_CHAR(x, y, sym[ch]);
+    	MTLCD_DATA(0x00);
+    	x = x + 7;
+    	i++;
+	}
+}
+
+void MTLCD_PRINT_NUMBER(unsigned char x, unsigned char y,unsigned char num){
+char num_t[3];
+num_t[0] = num/100;
+num_t[1] = (num - num_t[0]*100)/10;
+num_t[2] = (num - num_t[0]*100 - num_t[1]*10);
+int i;
+for(i = 0;i<3;i++) num_t[i] = num_t[i] + '0';
+MTLCD_PRINT_STRING(x,y,num_t);
+}
+//void MTLCD_PRINT_TIME(char x, char y, int sec){
+//  		MTLCD_SET_HALF(1,1);
+//		MTLCD_set_x(1);
+//		MTLCD_set_y(7);
+//		MTLCD_PRINT_BLOCK(numbers[min/10]);
+//		MTLCD_PRINT_BLOCK(numbers[min%10]);
+//		MTLCD_DATA(0x00);
+//		MTLCD_DATA(0x6C);
+//		MTLCD_DATA(0x00);
+//		MTLCD_PRINT_BLOCK(numbers[secons/10]);
+//		MTLCD_PRINT_BLOCK(numbers[secons%10]);
+//		MTLCD_DATA(0xC0);
+//		MTLCD_DATA(0xC0);
+//		MTLCD_DATA(0x00);
+//		MTLCD_PRINT_BLOCK(numbers[dsec]);
+//}
+
 //void MTLCD_READ_STATUS(){
 //	GPIO_HIGH()
 //	MTLCD_CMD()
 //}
+
+
+
+//for(i = 0;i<8;i = i + 1){
+//	MTLCD_set_x(0);
+//	MTLCD_set_y(i);
+//	int y;
+//	for(y = 0;y<64;y++){
+//		MTLCD_DATA(HARD[i][y]);
+//
+//	}
+//}
+//MTLCD_SET_HALF(0,1);
+//for(i = 0;i<8;i++){
+//	MTLCD_set_x(0);
+//	MTLCD_set_y(i);
+//	int y;
+//	for(y = 0;y<8;y++){
+//		MTLCD_PRINT_BLOCK(FL[y + (i*8)]);
+//	}
+//}
+////			while(1);
+////			for (i = 0; i<3000;i++) while_time(1000);
+//MTLCD_CLR();
+//MTLCD_SET_HALF(1,1);
+//MTLCD_set_x(1);
+//MTLCD_set_y(1);
+//int y;
+//for(y = 0;y<64;y++){
+//	MTLCD_DATA(0x55);
+//	MTLCD_DATA(0xAA);
+//}
+//MTLCD_set_x(3);
+//MTLCD_set_y(3);
+//MTLCD_PRINT_BLOCK(FULL_CIRC);
+//MTLCD_PRINT_BLOCK(FULL_CIRC);
+//MTLCD_PRINT_BLOCK(EMPTY_CIRC);
+//MTLCD_PRINT_BLOCK(EMPTY_CIRC);
+//MTLCD_set_x(1);
+//MTLCD_set_y(5);
+//MTLCD_PRINT_BLOCK(STANDUP1);
+//MTLCD_PRINT_BLOCK(STANDUP2);
+//MTLCD_set_x(1);
+//MTLCD_set_y(6);
+//MTLCD_PRINT_BLOCK(STANDUP3);
+//MTLCD_SET_HALF(1,0);
+//MTLCD_set_x(1);
+//MTLCD_set_y(4);
+////			int i;
+//for (i = 0;i<8;i++){
+//	MTLCD_PRINT_BLOCK(numbers[i]);
+//}
+//MTLCD_SET_HALF(0,1);
+//MTLCD_set_x(1);
+//MTLCD_set_y(4);
+//for (i = 8;i<10;i++){
+//	MTLCD_PRINT_BLOCK(numbers[i]);
+//}
+//MTLCD_SET_HALF(0,1);
+//MTLCD_set_x(1);
+//MTLCD_set_y(4);
+//for (i = 8;i<10;i++){
+//	MTLCD_PRINT_BLOCK(numbers[i]);
+//}
+//MTLCD_SET_HALF(1,0);
+//MTLCD_set_x(18);
+//MTLCD_set_y(5);
+//for (i = 0;i<4;i++){
+//	MTLCD_PRINT_BLOCK(BIG_CIRC[i]);
+//}
+//MTLCD_set_x(18);
+//MTLCD_set_y(6);
+//for (i = 4;i<8;i++){
+//	MTLCD_PRINT_BLOCK(BIG_CIRC[i]);
+//}
+//MTLCD_SET_HALF(0,1);
+//MTLCD_set_x(18);
+//MTLCD_set_y(5);
+//for (i = 0;i<2;i++){
+//	MTLCD_PRINT_BLOCK(DOWN_MAN[i]);
+//}
+

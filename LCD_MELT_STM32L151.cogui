@@ -22,17 +22,19 @@
 <part id="9"/>
 <part id="10"/>
 <part id="11"/>
+<part id="12"/>
+<part id="13"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="LCD_func.h" partName="LCD_func.h" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/LCD_func.h" title="LCD_func.h" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/LCD_func.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/MTLCD/LCD_func.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="394" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="93" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="Clock.h" partName="Clock.h" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/Clock.h" title="Clock.h" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/Clock.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/CPU/Clock.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="87" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="87" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="TIMs.c" partName="TIMs.c" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/TIMs.c" title="TIMs.c" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/TIMs.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/CPU/TIMs/TIMs.c"/>
@@ -42,10 +44,6 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/components/STM32L151xBA_CUBELIB/stm32l1xx_hal_gpio.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="12797" selectionTopPixel="4350"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/app/main.c" title="main.c" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/app/main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2878" selectionTopPixel="1678"/>
-</editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="TIMs.h" partName="TIMs.h" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/TIMs.h" title="TIMs.h" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/TIMs.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/CPU/TIMs/TIMs.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="53" selectionOffset="32" selectionTopPixel="0"/>
@@ -54,9 +52,9 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/defines.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="383" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="Keyboard.c" partName="Keyboard.c" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/Keyboard.c" title="Keyboard.c" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/Keyboard.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Keyboard.c" partName="Keyboard.c" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/Keyboard.c" title="Keyboard.c" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/Keyboard.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/Keyboard/Keyboard.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1813" selectionTopPixel="938"/>
+<editorState selectionHorizontalPixel="0" selectionLength="27" selectionOffset="2295" selectionTopPixel="1108"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="Keyboard.h" partName="Keyboard.h" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/Keyboard.h" title="Keyboard.h" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/Keyboard.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/Keyboard/Keyboard.h"/>
@@ -68,11 +66,23 @@
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="chars.h" partName="chars.h" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/chars.h" title="chars.h" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/chars.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/MTLCD/chars.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8075" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="14418" selectionTopPixel="4473"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="startup_stm32l151xba.s" partName="startup_stm32l151xba.s" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/components/coocox-master/STM32L151xBA_CUBELIB/source/startup_stm32l151xba.s" title="startup_stm32l151xba.s" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/components/coocox-master/STM32L151xBA_CUBELIB/source/startup_stm32l151xba.s" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/components/STM32L151xBA_CUBELIB/startup_stm32l151xba.s"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="LCD_func.c" partName="LCD_func.c" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/LCD_func.c" title="LCD_func.c" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/LCD_func.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/MTLCD/LCD_func.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7956" selectionTopPixel="3650"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/app/main.c" title="main.c" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/app/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="528" selectionTopPixel="121"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="GPIO.c" partName="GPIO.c" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/GPIO.c" title="GPIO.c" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/GPIO.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/CPU/GPIO.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="17" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="GPIO.h" partName="GPIO.h" path="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/GPIO.h" title="GPIO.h" tooltip="C:/Users/Sergey/CoIDE/workspace/LCD_MELT_STM32L151/GPIO.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LCD_MELT_STM32L151/CPU/GPIO.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="108" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -86,10 +96,11 @@
 <expanded>
 <element path="/LCD_MELT_STM32L151"/>
 <element path="/LCD_MELT_STM32L151/CPU"/>
+<element path="/LCD_MELT_STM32L151/Keyboard"/>
 <element path="/LCD_MELT_STM32L151/MTLCD"/>
 </expanded>
 <selection>
-<element path="/LCD_MELT_STM32L151/MTLCD/LCD_func.c"/>
+<element path="/LCD_MELT_STM32L151/Keyboard/Keyboard.c"/>
 </selection>
 </viewState>
 </view>
@@ -107,7 +118,8 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>&#x0A;<category IMemento.internal.id="Warnings (1 item)"/>
+<expanded>
+<category IMemento.internal.id="Warnings (1 item)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -127,7 +139,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.coocox.builder.perspective.CoBuilder">
+<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.coocox.builder.ui.PerspectiveCoBuilder" id="org.coocox.builder.perspective.CoBuilder" label="CooCox CoBuilder"/>
 <alwaysOnActionSet id="org.coocox.welcome.ui.actionSet"/>
@@ -149,8 +161,8 @@
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showMemoryBrowserAction"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showVariablesAction"/>
 <hide_menu_item_id id="org.coocox.builder.ui.openProjectExplorerAction"/>
-<hide_menu_item_id id="org.coocox.codebugger.trace.actions.ShowTraceControlAction"/>
 <hide_menu_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
+<hide_menu_item_id id="org.coocox.codebugger.trace.actions.ShowTraceControlAction"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showRegistersAction"/>
 <hide_toolbar_item_id id="org.eclipse.cdt.debug.internal.ui.actions.ToggleInstructionStepModeAction"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
@@ -324,159 +336,160 @@
 <workingSets/>
 <navigationHistory>
 <editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/LCD_MELT_STM32L151/MTLCD/LCD_func.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/LCD_MELT_STM32L151/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/LCD_MELT_STM32L151/Keyboard/Keyboard.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/LCD_MELT_STM32L151/components/STM32L151xBA_CUBELIB/startup_stm32l151xba.s"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/LCD_MELT_STM32L151/MTLCD/LCD_func.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/LCD_MELT_STM32L151/MTLCD/chars.h"/>
 </editors>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2282" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7777" y="18"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="1058" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="8014" y="0"/>
 </item>
-<item historyLabel="startup_stm32l151xba.s" index="2">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="8015" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="203" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7455" y="16"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2192" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7746" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2224" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="8015" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2282" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2315" y="0"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="486" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2370" y="0"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="353" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2486" y="0"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="183" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2917" y="0"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="490" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2935" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7999" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2962" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="8015" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2482" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7879" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2192" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="8013" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2224" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="8015" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2282" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7455" y="16"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2315" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7305" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2282" y="0"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="497" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2315" y="0"/>
+<item historyLabel="LCD_func.h" index="2">
+<position info="not_deleted" x="93" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2282" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7504" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2315" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="8018" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2282" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7455" y="16"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2315" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7700" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2282" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7566" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2411" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="8016" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2192" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="8015" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2224" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7455" y="16"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2282" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7729" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2315" y="0"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="489" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="297" y="11"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7777" y="18"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2935" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="8018" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2192" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7602" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2935" y="0"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="486" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2192" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7726" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2935" y="0"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="495" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2192" y="0"/>
+<item historyLabel="chars.h" index="3">
+<position info="not_deleted" x="13830" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2935" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7726" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2192" y="0"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="525" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2935" y="0"/>
+<item historyLabel="chars.h" index="3">
+<position info="not_deleted" x="16540" y="51"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2192" y="0"/>
+<item historyLabel="main.c" index="1">
+<position/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2935" y="0"/>
+<item historyLabel="chars.h" index="3">
+<position info="not_deleted" x="16565" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="2192" y="0"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="507" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="255" y="0"/>
+<item historyLabel="chars.h" index="3">
+<position info="not_deleted" x="16565" y="0"/>
 </item>
-<item historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="1944" y="0"/>
+<item historyLabel="LCD_func.h" index="2">
+<position info="not_deleted" x="93" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="255" y="0"/>
+<item historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7932" y="0"/>
 </item>
-<item historyLabel="startup_stm32l151xba.s" index="2">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="main.c" index="1">
+<position info="not_deleted" x="528" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2909" y="0"/>
+<item historyLabel="LCD_func.h" index="2">
+<position info="not_deleted" x="93" y="0"/>
 </item>
-<item active="true" historyLabel="Keyboard.c" index="1">
-<position info="not_deleted" x="1813" y="0"/>
+<item active="true" historyLabel="LCD_func.c" index="0">
+<position info="not_deleted" x="7867" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2878" y="0"/>
+<item historyLabel="chars.h" index="3">
+<position info="not_deleted" x="14418" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -485,8 +498,29 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="startup_stm32l151xba.s" tooltip="LCD_MELT_STM32L151/components/STM32L151xBA_CUBELIB/startup_stm32l151xba.s">
-<persistable path="/LCD_MELT_STM32L151/components/STM32L151xBA_CUBELIB/startup_stm32l151xba.s"/>
+<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
+<persistable>
+<org.coocox.welcome.ui.WelcomePage/>
+</persistable>
+</file>
+<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
+<persistable>
+<org.coocox.welcome.ui.WelcomePage/>
+</persistable>
+</file>
+<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
+<persistable>
+<org.coocox.welcome.ui.WelcomePage/>
+</persistable>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="my_string.h" tooltip="STM32L151C8T6/string/my_string.h">
+<persistable path="/STM32L151C8T6/string/my_string.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="my_string.c" tooltip="STM32L151C8T6/string/my_string.c">
+<persistable path="/STM32L151C8T6/string/my_string.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="sms_command.c" tooltip="STM32L151C8T6/Modules/Modem/sms_command.c">
+<persistable path="/STM32L151C8T6/Modules/Modem/sms_command.c"/>
 </file>
 <file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
 <persistable>
@@ -508,12 +542,6 @@
 <org.coocox.welcome.ui.WelcomePage/>
 </persistable>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="chars.h" tooltip="LCD_MELT_STM32L151/MTLCD/chars.h">
-<persistable path="/LCD_MELT_STM32L151/MTLCD/chars.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32l151xba.h" tooltip="LCD_MELT_STM32L151/components/STM32L151xBA_CUBELIB/stm32l151xba.h">
-<persistable path="/LCD_MELT_STM32L151/components/STM32L151xBA_CUBELIB/stm32l151xba.h"/>
-</file>
 <file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
 <persistable>
 <org.coocox.welcome.ui.WelcomePage/>
@@ -524,24 +552,8 @@
 <org.coocox.welcome.ui.WelcomePage/>
 </persistable>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="led.c" tooltip="STM32L151C8T6/Modules/Led/led.c">
-<persistable path="/STM32L151C8T6/Modules/Led/led.c"/>
-</file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
-</file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Keyboard.h" tooltip="LCD_MELT_STM32L151/Keyboard/Keyboard.h">
-<persistable path="/LCD_MELT_STM32L151/Keyboard/Keyboard.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Keyboard.c" tooltip="LCD_MELT_STM32L151/Keyboard/Keyboard.c">
-<persistable path="/LCD_MELT_STM32L151/Keyboard/Keyboard.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="GPIO.h" tooltip="LCD_MELT_STM32L151/CPU/GPIO.h">
+<persistable path="/LCD_MELT_STM32L151/CPU/GPIO.h"/>
 </file>
 </mruList>
 </workbench>
