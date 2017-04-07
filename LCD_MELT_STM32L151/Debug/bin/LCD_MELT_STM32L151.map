@@ -112,19 +112,6 @@ Discarded input sections
  .debug_frame   0x00000000      0x5e0 ..\obj\stm32l1xx_hal_uart.o
  .ARM.attributes
                 0x00000000       0x33 ..\obj\stm32l1xx_hal_uart.o
- .text          0x00000000     0x20d4 ..\obj\stm32l1xx_hal_pcd.o
- .data          0x00000000        0x0 ..\obj\stm32l1xx_hal_pcd.o
- .bss           0x00000000        0x0 ..\obj\stm32l1xx_hal_pcd.o
- .debug_info    0x00000000     0x1097 ..\obj\stm32l1xx_hal_pcd.o
- .debug_abbrev  0x00000000      0x257 ..\obj\stm32l1xx_hal_pcd.o
- .debug_aranges
-                0x00000000       0x20 ..\obj\stm32l1xx_hal_pcd.o
- .debug_line    0x00000000      0x6b6 ..\obj\stm32l1xx_hal_pcd.o
- .debug_str     0x00000000      0x84d ..\obj\stm32l1xx_hal_pcd.o
- .comment       0x00000000       0x6f ..\obj\stm32l1xx_hal_pcd.o
- .debug_frame   0x00000000      0x5ac ..\obj\stm32l1xx_hal_pcd.o
- .ARM.attributes
-                0x00000000       0x33 ..\obj\stm32l1xx_hal_pcd.o
  .text          0x00000000       0x84 ..\obj\stm32l1xx_hal_pcd_ex.o
  .data          0x00000000        0x0 ..\obj\stm32l1xx_hal_pcd_ex.o
  .bss           0x00000000        0x0 ..\obj\stm32l1xx_hal_pcd_ex.o
@@ -138,6 +125,19 @@ Discarded input sections
  .debug_frame   0x00000000       0x38 ..\obj\stm32l1xx_hal_pcd_ex.o
  .ARM.attributes
                 0x00000000       0x33 ..\obj\stm32l1xx_hal_pcd_ex.o
+ .text          0x00000000     0x20d4 ..\obj\stm32l1xx_hal_pcd.o
+ .data          0x00000000        0x0 ..\obj\stm32l1xx_hal_pcd.o
+ .bss           0x00000000        0x0 ..\obj\stm32l1xx_hal_pcd.o
+ .debug_info    0x00000000     0x1097 ..\obj\stm32l1xx_hal_pcd.o
+ .debug_abbrev  0x00000000      0x257 ..\obj\stm32l1xx_hal_pcd.o
+ .debug_aranges
+                0x00000000       0x20 ..\obj\stm32l1xx_hal_pcd.o
+ .debug_line    0x00000000      0x6b6 ..\obj\stm32l1xx_hal_pcd.o
+ .debug_str     0x00000000      0x84d ..\obj\stm32l1xx_hal_pcd.o
+ .comment       0x00000000       0x6f ..\obj\stm32l1xx_hal_pcd.o
+ .debug_frame   0x00000000      0x5ac ..\obj\stm32l1xx_hal_pcd.o
+ .ARM.attributes
+                0x00000000       0x33 ..\obj\stm32l1xx_hal_pcd.o
  .text          0x00000000       0xb4 ..\obj\stm32l1xx_hal_spi_ex.o
  .data          0x00000000        0x0 ..\obj\stm32l1xx_hal_spi_ex.o
  .bss           0x00000000        0x0 ..\obj\stm32l1xx_hal_spi_ex.o
@@ -483,7 +483,6 @@ Discarded input sections
  .debug_frame   0x00000000      0x270 ..\obj\stm32l1xx_hal.o
  .ARM.attributes
                 0x00000000       0x33 ..\obj\stm32l1xx_hal.o
- .bss           0x00000000        0x0 ..\obj\Keyboard.o
  .text          0x00000000     0x1004 ..\obj\stm32l1xx_hal_smartcard.o
  .data          0x00000000        0x0 ..\obj\stm32l1xx_hal_smartcard.o
  .bss           0x00000000        0x0 ..\obj\stm32l1xx_hal_smartcard.o
@@ -660,7 +659,7 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm
 LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
                 0x20002800                _eram = 0x20002800
 
-.text           0x08000000     0x1b04
+.text           0x08000000     0x1da8
  *(.isr_vector)
  .isr_vector    0x08000000      0x13c ..\obj\startup_stm32l151xba.o
                 0x08000000                g_pfnVectors
@@ -676,131 +675,138 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm
                 0x0800033c                while_time
  .text          0x08000358       0x58 ..\obj\Clock.o
                 0x08000358                Clock_init
- .text          0x080003b0      0x7d4 ..\obj\LCD_func.o
+ .text          0x080003b0      0x8a0 ..\obj\LCD_func.o
                 0x080003b0                MTLCD_DISPLAY
-                0x0800049c                MTLCD_print_targets
-                0x080004f8                MTLCD_accept_DB_port
-                0x08000520                MTLCD_set_DB_port
-                0x08000618                MTLCD_CMD
-                0x08000644                MTLCD_DATA
-                0x0800068c                MTLCD_Init
-                0x08000850                MTLCD_OnOff
-                0x08000880                MTLCD_set_x
-                0x080008ac                MTLCD_set_y
-                0x080008d8                MTLCD_set_cord
-                0x08000920                MTLCD_CLR
-                0x08000980                MTLCD_SET_HALF
-                0x080009cc                MTLCD_PRINT_BLOCK
-                0x080009fc                MTLCD_PRINT_CHAR
-                0x08000a74                MTLCD_PRINT_STRING
-                0x08000af8                MTLCD_PRINT_NUMBER
- .text          0x08000b84      0x558 ..\obj\stm32l1xx_hal_gpio.o
-                0x08000b84                HAL_GPIO_Init
-                0x08000e88                HAL_GPIO_DeInit
-                0x08000fc4                HAL_GPIO_ReadPin
-                0x08000ff4                HAL_GPIO_WritePin
-                0x08001024                HAL_GPIO_TogglePin
-                0x08001048                HAL_GPIO_LockPin
-                0x08001098                HAL_GPIO_EXTI_IRQHandler
-                0x080010c8                HAL_GPIO_EXTI_Callback
+                0x08000528                MTLCD_print_targets
+                0x08000584                MTLCD_print_currnet_shot
+                0x0800059c                MTLCD_print_currnet_number
+                0x080005c4                MTLCD_accept_DB_port
+                0x080005ec                MTLCD_set_DB_port
+                0x080006e4                MTLCD_CMD
+                0x08000710                MTLCD_DATA
+                0x08000758                MTLCD_Init
+                0x0800091c                MTLCD_OnOff
+                0x0800094c                MTLCD_set_x
+                0x08000978                MTLCD_set_y
+                0x080009a4                MTLCD_set_cord
+                0x080009ec                MTLCD_CLR
+                0x08000a4c                MTLCD_SET_HALF
+                0x08000a98                MTLCD_PRINT_BLOCK
+                0x08000ac8                MTLCD_PRINT_CHAR
+                0x08000b40                MTLCD_PRINT_STRING
+                0x08000bc4                MTLCD_PRINT_NUMBER
+ .text          0x08000c50      0x558 ..\obj\stm32l1xx_hal_gpio.o
+                0x08000c50                HAL_GPIO_Init
+                0x08000f54                HAL_GPIO_DeInit
+                0x08001090                HAL_GPIO_ReadPin
+                0x080010c0                HAL_GPIO_WritePin
+                0x080010f0                HAL_GPIO_TogglePin
+                0x08001114                HAL_GPIO_LockPin
+                0x08001164                HAL_GPIO_EXTI_IRQHandler
+                0x08001194                HAL_GPIO_EXTI_Callback
  .text.Reset_Handler
-                0x080010dc       0x48 ..\obj\startup_stm32l151xba.o
-                0x080010dc                Reset_Handler
+                0x080011a8       0x48 ..\obj\startup_stm32l151xba.o
+                0x080011a8                Reset_Handler
  .text.Default_Handler
-                0x08001124        0x2 ..\obj\startup_stm32l151xba.o
-                0x08001124                RTC_Alarm_IRQHandler
-                0x08001124                EXTI2_IRQHandler
-                0x08001124                DebugMon_Handler
-                0x08001124                HardFault_Handler
-                0x08001124                TIM10_IRQHandler
-                0x08001124                USB_HP_IRQHandler
-                0x08001124                SysTick_Handler
-                0x08001124                PVD_IRQHandler
-                0x08001124                PendSV_Handler
-                0x08001124                NMI_Handler
-                0x08001124                EXTI3_IRQHandler
-                0x08001124                EXTI0_IRQHandler
-                0x08001124                I2C2_EV_IRQHandler
-                0x08001124                UsageFault_Handler
-                0x08001124                SPI1_IRQHandler
-                0x08001124                USB_FS_WKUP_IRQHandler
-                0x08001124                DMA1_Channel4_IRQHandler
-                0x08001124                ADC1_IRQHandler
-                0x08001124                USART3_IRQHandler
-                0x08001124                DMA1_Channel7_IRQHandler
-                0x08001124                TIM4_IRQHandler
-                0x08001124                I2C1_EV_IRQHandler
-                0x08001124                DMA1_Channel6_IRQHandler
-                0x08001124                TIM3_IRQHandler
-                0x08001124                RCC_IRQHandler
-                0x08001124                DMA1_Channel1_IRQHandler
-                0x08001124                Default_Handler
-                0x08001124                EXTI15_10_IRQHandler
-                0x08001124                TIM7_IRQHandler
-                0x08001124                EXTI9_5_IRQHandler
-                0x08001124                TIM9_IRQHandler
-                0x08001124                TAMPER_STAMP_IRQHandler
-                0x08001124                RTC_WKUP_IRQHandler
-                0x08001124                SPI2_IRQHandler
-                0x08001124                MemManage_Handler
-                0x08001124                SVC_Handler
-                0x08001124                DMA1_Channel5_IRQHandler
-                0x08001124                USB_LP_IRQHandler
-                0x08001124                EXTI4_IRQHandler
-                0x08001124                DMA1_Channel3_IRQHandler
-                0x08001124                COMP_IRQHandler
-                0x08001124                WWDG_IRQHandler
-                0x08001124                DAC_IRQHandler
-                0x08001124                EXTI1_IRQHandler
-                0x08001124                TIM11_IRQHandler
-                0x08001124                USART2_IRQHandler
-                0x08001124                I2C2_ER_IRQHandler
-                0x08001124                DMA1_Channel2_IRQHandler
-                0x08001124                FLASH_IRQHandler
-                0x08001124                BusFault_Handler
-                0x08001124                USART1_IRQHandler
-                0x08001124                I2C1_ER_IRQHandler
- *fill*         0x08001126        0x2 
- .text          0x08001128      0x1c0 ..\obj\system_stm32l1xx.o
-                0x08001128                SystemInit
-                0x08001190                SystemCoreClockUpdate
- .text          0x080012e8       0x48 ..\obj\main.o
-                0x080012e8                main
- .text          0x08001330      0x208 ..\obj\Keyboard.o
-                0x08001330                KB_init
-                0x080013d8                KB_work
-                0x0800148c                KB_check
- .text          0x08001538       0x34 ..\obj\GPIO.o
-                0x08001538                GPIO_Init
- .text          0x0800156c       0xc4 ..\obj\Hardware.o
-                0x0800156c                get_target
-                0x08001594                get_current_state
-                0x080015a8                get_current_mode
-                0x080015bc                get_current_max_shot
-                0x080015d0                set_current_state
-                0x080015f0                set_current_mode
-                0x08001610                set_current_max_shot
+                0x080011f0        0x2 ..\obj\startup_stm32l151xba.o
+                0x080011f0                RTC_Alarm_IRQHandler
+                0x080011f0                EXTI2_IRQHandler
+                0x080011f0                DebugMon_Handler
+                0x080011f0                HardFault_Handler
+                0x080011f0                TIM10_IRQHandler
+                0x080011f0                USB_HP_IRQHandler
+                0x080011f0                SysTick_Handler
+                0x080011f0                PVD_IRQHandler
+                0x080011f0                PendSV_Handler
+                0x080011f0                NMI_Handler
+                0x080011f0                EXTI3_IRQHandler
+                0x080011f0                EXTI0_IRQHandler
+                0x080011f0                I2C2_EV_IRQHandler
+                0x080011f0                UsageFault_Handler
+                0x080011f0                SPI1_IRQHandler
+                0x080011f0                USB_FS_WKUP_IRQHandler
+                0x080011f0                DMA1_Channel4_IRQHandler
+                0x080011f0                ADC1_IRQHandler
+                0x080011f0                USART3_IRQHandler
+                0x080011f0                DMA1_Channel7_IRQHandler
+                0x080011f0                TIM4_IRQHandler
+                0x080011f0                I2C1_EV_IRQHandler
+                0x080011f0                DMA1_Channel6_IRQHandler
+                0x080011f0                TIM3_IRQHandler
+                0x080011f0                RCC_IRQHandler
+                0x080011f0                DMA1_Channel1_IRQHandler
+                0x080011f0                Default_Handler
+                0x080011f0                EXTI15_10_IRQHandler
+                0x080011f0                TIM7_IRQHandler
+                0x080011f0                EXTI9_5_IRQHandler
+                0x080011f0                TIM9_IRQHandler
+                0x080011f0                TAMPER_STAMP_IRQHandler
+                0x080011f0                RTC_WKUP_IRQHandler
+                0x080011f0                SPI2_IRQHandler
+                0x080011f0                MemManage_Handler
+                0x080011f0                SVC_Handler
+                0x080011f0                DMA1_Channel5_IRQHandler
+                0x080011f0                USB_LP_IRQHandler
+                0x080011f0                EXTI4_IRQHandler
+                0x080011f0                DMA1_Channel3_IRQHandler
+                0x080011f0                COMP_IRQHandler
+                0x080011f0                WWDG_IRQHandler
+                0x080011f0                DAC_IRQHandler
+                0x080011f0                EXTI1_IRQHandler
+                0x080011f0                TIM11_IRQHandler
+                0x080011f0                USART2_IRQHandler
+                0x080011f0                I2C2_ER_IRQHandler
+                0x080011f0                DMA1_Channel2_IRQHandler
+                0x080011f0                FLASH_IRQHandler
+                0x080011f0                BusFault_Handler
+                0x080011f0                USART1_IRQHandler
+                0x080011f0                I2C1_ER_IRQHandler
+ *fill*         0x080011f2        0x2 
+ .text          0x080011f4      0x1c0 ..\obj\system_stm32l1xx.o
+                0x080011f4                SystemInit
+                0x0800125c                SystemCoreClockUpdate
+ .text          0x080013b4       0x48 ..\obj\main.o
+                0x080013b4                main
+ .text          0x080013fc      0x330 ..\obj\Keyboard.o
+                0x080013fc                get_current_number
+                0x08001410                KB_init
+                0x080014b8                KB_work
+                0x08001680                KB_check
+ .text          0x0800172c       0x34 ..\obj\GPIO.o
+                0x0800172c                GPIO_Init
+ .text          0x08001760      0x118 ..\obj\Hardware.o
+                0x08001760                get_target
+                0x08001788                get_current_state
+                0x0800179c                get_current_mode
+                0x080017b0                get_current_max_shot
+                0x080017c4                get_current_shot
+                0x080017d8                get_current_position
+                0x080017ec                set_current_position
+                0x0800180c                set_current_state
+                0x0800182c                set_current_mode
+                0x0800184c                set_current_max_shot
+                0x0800186c                restore_targets
  .text.__libc_init_array
-                0x08001630       0x50 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-init.o)
-                0x08001630                __libc_init_array
+                0x08001878       0x50 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-init.o)
+                0x08001878                __libc_init_array
  .text.startup.register_fini
-                0x08001680       0x14 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
- .text.atexit   0x08001694        0xc c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
-                0x08001694                atexit
+                0x080018c8       0x14 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
+ .text.atexit   0x080018dc        0xc c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
+                0x080018dc                atexit
  .text.__libc_fini_array
-                0x080016a0       0x28 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
-                0x080016a0                __libc_fini_array
+                0x080018e8       0x28 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
+                0x080018e8                __libc_fini_array
  .text.__register_exitproc
-                0x080016c8       0xa4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)
-                0x080016c8                __register_exitproc
+                0x08001910       0xa4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)
+                0x08001910                __register_exitproc
  *(.init)
- .init          0x0800176c        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x0800176c                _init
- .init          0x08001770        0x8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+ .init          0x080019b4        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x080019b4                _init
+ .init          0x080019b8        0x8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
  *(.fini)
- .fini          0x08001778        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x08001778                _fini
- .fini          0x0800177c        0x8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+ .fini          0x080019c0        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x080019c0                _fini
+ .fini          0x080019c4        0x8 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -812,48 +818,48 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm
  *(SORT(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata        0x08001784      0x378 ..\obj\LCD_func.o
-                0x08001784                sym
+ .rodata        0x080019cc      0x3d4 ..\obj\LCD_func.o
+                0x080019cc                sym
  .rodata.str1.4
-                0x08001afc        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
+                0x08001da0        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
                                   0x2 (size before relaxing)
  .rodata._global_impure_ptr
-                0x08001b00        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
-                0x08001b00                _global_impure_ptr
+                0x08001da4        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-impure.o)
+                0x08001da4                _global_impure_ptr
  *(.eh_fram e*)
 
-.eh_frame       0x08001b04        0x0
- .eh_frame      0x08001b04        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.eh_frame       0x08001da8        0x0
+ .eh_frame      0x08001da8        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.glue_7         0x08001b04        0x0
- .glue_7        0x08001b04        0x0 linker stubs
+.glue_7         0x08001da8        0x0
+ .glue_7        0x08001da8        0x0 linker stubs
 
-.glue_7t        0x08001b04        0x0
- .glue_7t       0x08001b04        0x0 linker stubs
+.glue_7t        0x08001da8        0x0
+ .glue_7t       0x08001da8        0x0 linker stubs
 
-.vfp11_veneer   0x08001b04        0x0
- .vfp11_veneer  0x08001b04        0x0 linker stubs
+.vfp11_veneer   0x08001da8        0x0
+ .vfp11_veneer  0x08001da8        0x0 linker stubs
 
-.v4_bx          0x08001b04        0x0
- .v4_bx         0x08001b04        0x0 linker stubs
+.v4_bx          0x08001da8        0x0
+ .v4_bx         0x08001da8        0x0 linker stubs
 
-.iplt           0x08001b04        0x0
- .iplt          0x08001b04        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.iplt           0x08001da8        0x0
+ .iplt          0x08001da8        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.rel.dyn        0x08001b04        0x0
- .rel.iplt      0x08001b04        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.rel.dyn        0x08001da8        0x0
+ .rel.iplt      0x08001da8        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08001b04                __exidx_start = .
+                0x08001da8                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08001b04                __exidx_end = .
-                0x08001b04                __etext = .
-                0x08001b04                _sidata = __etext
+                0x08001da8                __exidx_end = .
+                0x08001da8                __etext = .
+                0x08001da8                _sidata = __etext
 
-.data           0x20000000      0xb68 load address 0x08001b04
+.data           0x20000000      0xb68 load address 0x08001da8
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
@@ -909,10 +915,10 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm
                 0x20000b68                __data_end__ = .
                 0x20000b68                _edata = __data_end__
 
-.igot.plt       0x20000b68        0x0 load address 0x0800266c
+.igot.plt       0x20000b68        0x0 load address 0x08002910
  .igot.plt      0x20000b68        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.bss            0x20000b68       0x30 load address 0x0800266c
+.bss            0x20000b68       0x34 load address 0x08002910
                 0x20000b68                . = ALIGN (0x4)
                 0x20000b68                __bss_start__ = .
                 0x20000b68                _sbss = __bss_start__
@@ -922,27 +928,33 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm
                 0x20000b84                secons
                 0x20000b88                min
                 0x20000b8c                dsec
- .bss           0x20000b90        0x6 ..\obj\Hardware.o
-                0x20000b90                TARGET
-                0x20000b95                CURRENT_MODE
+ .bss           0x20000b90        0x2 ..\obj\Keyboard.o
+                0x20000b90                CURRENT_NUMBER
+                0x20000b91                CURRENT_LAST_NUMBER
+ *fill*         0x20000b92        0x2 
+ .bss           0x20000b94        0x8 ..\obj\Hardware.o
+                0x20000b94                TARGET
+                0x20000b99                CURRENT_MODE
+                0x20000b9a                CURRENT_SHOT
+                0x20000b9b                CURRENT_POSITION
  *(COMMON)
-                0x20000b98                . = ALIGN (0x4)
- *fill*         0x20000b96        0x2 
-                0x20000b98                __bss_end__ = .
-                0x20000b98                _ebss = __bss_end__
+                0x20000b9c                . = ALIGN (0x4)
+                0x20000b9c                __bss_end__ = .
+                0x20000b9c                _ebss = __bss_end__
 
-.heap           0x20000b98        0x0
-                0x20000b98                __end__ = .
-                0x20000b98                _end = __end__
-                0x20000b98                end = __end__
+.heap           0x20000b9c        0x0
+                0x20000b9c                __end__ = .
+                0x20000b9c                _end = __end__
+                0x20000b9c                end = __end__
  *(.heap*)
-                0x20000b98                __HeapLimit = .
+                0x20000b9c                __HeapLimit = .
 
-.co_stack       0x20000b98        0x0
-                0x20000b98                . = ALIGN (0x8)
+.co_stack       0x20000b9c        0x4 load address 0x08002944
+                0x20000ba0                . = ALIGN (0x8)
+ *fill*         0x20000b9c        0x4 
  *(.co_stack .co_stack.*)
                 0x20002800                __StackTop = (ORIGIN (ram) + LENGTH (ram))
-                0x20002800                __StackLimit = (__StackTop - SIZEOF (.co_stack))
+                0x200027fc                __StackLimit = (__StackTop - SIZEOF (.co_stack))
                 0x20002800                PROVIDE (__stack, __StackTop)
                 0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region ram  overflowed with stack)
 LOAD ..\obj\stm32l1xx_hal_rcc_ex.o
@@ -952,8 +964,8 @@ LOAD ..\obj\stm32l1xx_hal_sram.o
 LOAD ..\obj\stm32l1xx_hal_sd.o
 LOAD ..\obj\stm32l1xx_hal_adc.o
 LOAD ..\obj\stm32l1xx_hal_uart.o
-LOAD ..\obj\stm32l1xx_hal_pcd.o
 LOAD ..\obj\stm32l1xx_hal_pcd_ex.o
+LOAD ..\obj\stm32l1xx_hal_pcd.o
 LOAD ..\obj\stm32l1xx_hal_spi_ex.o
 LOAD ..\obj\stm32l1xx_hal_opamp.o
 LOAD ..\obj\Clock.o
@@ -1062,29 +1074,29 @@ OUTPUT(LCD_MELT_STM32L151.elf elf32-littlearm)
  .comment       0x0000006e       0x6f ..\obj\GPIO.o
  .comment       0x0000006e       0x6f ..\obj\Hardware.o
 
-.debug_info     0x00000000     0x22b2
+.debug_info     0x00000000     0x24a3
  .debug_info    0x00000000      0x6ed ..\obj\TIMs.o
  .debug_info    0x000006ed      0x217 ..\obj\Clock.o
- .debug_info    0x00000904      0x71d ..\obj\LCD_func.o
- .debug_info    0x00001021      0x5e0 ..\obj\stm32l1xx_hal_gpio.o
- .debug_info    0x00001601       0xed ..\obj\startup_stm32l151xba.o
- .debug_info    0x000016ee      0x40f ..\obj\system_stm32l1xx.o
- .debug_info    0x00001afd      0x136 ..\obj\main.o
- .debug_info    0x00001c33      0x32e ..\obj\Keyboard.o
- .debug_info    0x00001f61      0x18d ..\obj\GPIO.o
- .debug_info    0x000020ee      0x1c4 ..\obj\Hardware.o
+ .debug_info    0x00000904      0x7b8 ..\obj\LCD_func.o
+ .debug_info    0x000010bc      0x5e0 ..\obj\stm32l1xx_hal_gpio.o
+ .debug_info    0x0000169c       0xed ..\obj\startup_stm32l151xba.o
+ .debug_info    0x00001789      0x40f ..\obj\system_stm32l1xx.o
+ .debug_info    0x00001b98      0x136 ..\obj\main.o
+ .debug_info    0x00001cce      0x403 ..\obj\Keyboard.o
+ .debug_info    0x000020d1      0x18d ..\obj\GPIO.o
+ .debug_info    0x0000225e      0x245 ..\obj\Hardware.o
 
-.debug_abbrev   0x00000000      0xae4
+.debug_abbrev   0x00000000      0xb5e
  .debug_abbrev  0x00000000      0x1cd ..\obj\TIMs.o
  .debug_abbrev  0x000001cd       0x9b ..\obj\Clock.o
- .debug_abbrev  0x00000268      0x245 ..\obj\LCD_func.o
- .debug_abbrev  0x000004ad      0x1a1 ..\obj\stm32l1xx_hal_gpio.o
- .debug_abbrev  0x0000064e       0x12 ..\obj\startup_stm32l151xba.o
- .debug_abbrev  0x00000660       0xff ..\obj\system_stm32l1xx.o
- .debug_abbrev  0x0000075f       0xca ..\obj\main.o
- .debug_abbrev  0x00000829      0x144 ..\obj\Keyboard.o
- .debug_abbrev  0x0000096d       0x9b ..\obj\GPIO.o
- .debug_abbrev  0x00000a08       0xdc ..\obj\Hardware.o
+ .debug_abbrev  0x00000268      0x25d ..\obj\LCD_func.o
+ .debug_abbrev  0x000004c5      0x1a1 ..\obj\stm32l1xx_hal_gpio.o
+ .debug_abbrev  0x00000666       0x12 ..\obj\startup_stm32l151xba.o
+ .debug_abbrev  0x00000678       0xff ..\obj\system_stm32l1xx.o
+ .debug_abbrev  0x00000777       0xca ..\obj\main.o
+ .debug_abbrev  0x00000841      0x190 ..\obj\Keyboard.o
+ .debug_abbrev  0x000009d1       0x9b ..\obj\GPIO.o
+ .debug_abbrev  0x00000a6c       0xf2 ..\obj\Hardware.o
 
 .debug_aranges  0x00000000      0x148
  .debug_aranges
@@ -1108,53 +1120,53 @@ OUTPUT(LCD_MELT_STM32L151.elf elf32-littlearm)
  .debug_aranges
                 0x00000128       0x20 ..\obj\Hardware.o
 
-.debug_line     0x00000000     0x174e
+.debug_line     0x00000000     0x17d1
  .debug_line    0x00000000      0x24a ..\obj\TIMs.o
  .debug_line    0x0000024a      0x21e ..\obj\Clock.o
- .debug_line    0x00000468      0x421 ..\obj\LCD_func.o
- .debug_line    0x00000889      0x337 ..\obj\stm32l1xx_hal_gpio.o
- .debug_line    0x00000bc0       0xd8 ..\obj\startup_stm32l151xba.o
- .debug_line    0x00000c98      0x216 ..\obj\system_stm32l1xx.o
- .debug_line    0x00000eae      0x1f0 ..\obj\main.o
- .debug_line    0x0000109e      0x2e5 ..\obj\Keyboard.o
- .debug_line    0x00001383      0x213 ..\obj\GPIO.o
- .debug_line    0x00001596      0x1b8 ..\obj\Hardware.o
+ .debug_line    0x00000468      0x444 ..\obj\LCD_func.o
+ .debug_line    0x000008ac      0x337 ..\obj\stm32l1xx_hal_gpio.o
+ .debug_line    0x00000be3       0xd8 ..\obj\startup_stm32l151xba.o
+ .debug_line    0x00000cbb      0x216 ..\obj\system_stm32l1xx.o
+ .debug_line    0x00000ed1      0x1f0 ..\obj\main.o
+ .debug_line    0x000010c1      0x338 ..\obj\Keyboard.o
+ .debug_line    0x000013f9      0x213 ..\obj\GPIO.o
+ .debug_line    0x0000160c      0x1c5 ..\obj\Hardware.o
 
-.debug_str      0x00000000      0xd44
+.debug_str      0x00000000      0xe24
  .debug_str     0x00000000      0x5b1 ..\obj\TIMs.o
                                 0x60c (size before relaxing)
  .debug_str     0x000005b1       0x7a ..\obj\Clock.o
                                 0x208 (size before relaxing)
- .debug_str     0x0000062b      0x1fa ..\obj\LCD_func.o
-                                0x381 (size before relaxing)
- .debug_str     0x00000825      0x1de ..\obj\stm32l1xx_hal_gpio.o
+ .debug_str     0x0000062b      0x243 ..\obj\LCD_func.o
+                                0x3ca (size before relaxing)
+ .debug_str     0x0000086e      0x1de ..\obj\stm32l1xx_hal_gpio.o
                                 0x3ff (size before relaxing)
- .debug_str     0x00000a03      0x138 ..\obj\system_stm32l1xx.o
+ .debug_str     0x00000a4c      0x138 ..\obj\system_stm32l1xx.o
                                 0x2e2 (size before relaxing)
- .debug_str     0x00000b3b       0x48 ..\obj\main.o
+ .debug_str     0x00000b84       0x48 ..\obj\main.o
                                 0x18b (size before relaxing)
- .debug_str     0x00000b83       0x81 ..\obj\Keyboard.o
-                                0x238 (size before relaxing)
- .debug_str     0x00000c04       0x37 ..\obj\GPIO.o
+ .debug_str     0x00000bcc       0xcc ..\obj\Keyboard.o
+                                0x298 (size before relaxing)
+ .debug_str     0x00000c98       0x37 ..\obj\GPIO.o
                                 0x1cf (size before relaxing)
- .debug_str     0x00000c3b      0x109 ..\obj\Hardware.o
-                                0x223 (size before relaxing)
+ .debug_str     0x00000ccf      0x155 ..\obj\Hardware.o
+                                0x299 (size before relaxing)
 
-.debug_frame    0x00000000      0x850
+.debug_frame    0x00000000      0x930
  .debug_frame   0x00000000      0x120 ..\obj\TIMs.o
  .debug_frame   0x00000120       0x30 ..\obj\Clock.o
- .debug_frame   0x00000150      0x26c ..\obj\LCD_func.o
- .debug_frame   0x000003bc      0x14c ..\obj\stm32l1xx_hal_gpio.o
- .debug_frame   0x00000508       0x58 ..\obj\system_stm32l1xx.o
- .debug_frame   0x00000560       0x2c ..\obj\main.o
- .debug_frame   0x0000058c       0x80 ..\obj\Keyboard.o
- .debug_frame   0x0000060c       0x30 ..\obj\GPIO.o
- .debug_frame   0x0000063c      0x110 ..\obj\Hardware.o
- .debug_frame   0x0000074c       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-init.o)
- .debug_frame   0x00000778       0x50 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
- .debug_frame   0x000007c8       0x20 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
- .debug_frame   0x000007e8       0x34 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
- .debug_frame   0x0000081c       0x34 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)
+ .debug_frame   0x00000150      0x2a4 ..\obj\LCD_func.o
+ .debug_frame   0x000003f4      0x14c ..\obj\stm32l1xx_hal_gpio.o
+ .debug_frame   0x00000540       0x58 ..\obj\system_stm32l1xx.o
+ .debug_frame   0x00000598       0x2c ..\obj\main.o
+ .debug_frame   0x000005c4       0xa0 ..\obj\Keyboard.o
+ .debug_frame   0x00000664       0x30 ..\obj\GPIO.o
+ .debug_frame   0x00000694      0x198 ..\obj\Hardware.o
+ .debug_frame   0x0000082c       0x2c c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-init.o)
+ .debug_frame   0x00000858       0x50 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__call_atexit.o)
+ .debug_frame   0x000008a8       0x20 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-atexit.o)
+ .debug_frame   0x000008c8       0x34 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-fini.o)
+ .debug_frame   0x000008fc       0x34 c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg.a(lib_a-__atexit.o)
 
 .debug_ranges   0x00000000       0x20
  .debug_ranges  0x00000000       0x20 ..\obj\startup_stm32l151xba.o

@@ -2,6 +2,8 @@
 #include "defines.h"
 #include "LCD_func.h"
 #include "Hardware.h"
+
+
 #define KB_DONT_PRESS 255
 
 #define KB_MAX_OUT 4
@@ -57,6 +59,15 @@ char KB_keys[4][4] = {
 		[2] = {'7','8','9','C'},
 		[3] = {'*','0','#','D'},
 };
+
+unsigned char CURRENT_NUMBER = 0;
+unsigned char CURRENT_LAST_NUMBER = 0;
+
+char get_current_number(){
+	return CURRENT_NUMBER;
+}
+
+
 void KB_init(){
 	GPIO_InitTypeDef initSrtuct;
 	int y;
@@ -98,6 +109,24 @@ void KB_work(){
 						MTLCD_CLR();
 						set_current_state(CURRENT_STATE_MENU_0);
 					}
+					if (key == 'A') {
+						if (get_current_mode() == CURRENT_MODE_AUTO) set_current_mode(CURRENT_MODE_HAND);
+						else if (get_current_mode() == CURRENT_MODE_HAND) set_current_mode(CURRENT_MODE_AUTO);
+					}
+					if (key == 'B') {
+						if (get_current_max_shot() == 5) set_current_max_shot(8);
+						else set_current_max_shot(5);
+					}
+					if (key == 'C') {
+						if (get_current_position() == CURRENT_POSITION_LIE) set_current_position(CURRENT_POSITION_STAND);
+						else set_current_position(CURRENT_POSITION_LIE);
+					}
+					if (key == 'D') {
+						MTLCD_CLR();
+						CURRENT_LAST_NUMBER = CURRENT_NUMBER;
+						CURRENT_NUMBER = 0;
+						set_current_state(CURRENT_STATE_MENU_0);
+					}
 				break;
 				case CURRENT_STATE_MENU_0:
 						if (key == 'A') {
@@ -108,10 +137,26 @@ void KB_work(){
 							if (get_current_max_shot() == 5) set_current_max_shot(8);
 							else set_current_max_shot(5);
 						}
-						if (key == '*') {
+						if (key == 'C') {
+							if (get_current_position() == CURRENT_POSITION_LIE) set_current_position(CURRENT_POSITION_STAND);
+							else set_current_position(CURRENT_POSITION_LIE);
+						}
+						if (key == '#') {
 							MTLCD_CLR();
 							set_current_state(CURRENT_STATE_DEFAULT);
 						}
+				break;
+				case CURRENT_STATE_INPUT_NUMBER:
+					if ((key >= '0') && (key <= '9')){
+						CURRENT_NUMBER = CURRENT_NUMBER * 10 + (key - 48);
+					}else{
+						if (key == '*') {
+							CURRENT_NUMBER = CURRENT_LAST_NUMBER;
+							set_current_state(CURRENT_STATE_DEFAULT);
+						}else if (key == '#') {
+							set_current_state(CURRENT_STATE_DEFAULT);
+						}
+					}
 				break;
 			}
 		}

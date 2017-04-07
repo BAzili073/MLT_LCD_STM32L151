@@ -5,6 +5,7 @@
 #include "TIMs.h"
 #include "chars.h"
 #include "Hardware.h"
+#include "Keyboard.h"
 
 #define MTLCD_DB0_PORT GPIOA
 #define MTLCD_DB0_PIN GPIO_PIN_11
@@ -50,7 +51,9 @@ void MTLCD_DISPLAY(){
 		if (get_current_max_shot() == CURRENT_MODE_AUTO) MTLCD_PRINT_STRING(113,0,"А");
 		else if (get_current_max_shot() == CURRENT_MODE_HAND) MTLCD_PRINT_STRING(113,0,"Р");
 		MTLCD_PRINT_NUMBER(120,0,get_current_max_shot());
+		MTLCD_print_currnet_number();
 		MTLCD_print_targets();
+		MTLCD_print_currnet_shot();
 
 	break;
 	case CURRENT_STATE_MENU_0:
@@ -60,10 +63,18 @@ void MTLCD_DISPLAY(){
 		else if (get_current_mode() == CURRENT_MODE_HAND) MTLCD_PRINT_STRING(85,1,"Ручной");
 		MTLCD_PRINT_STRING(0,2,"B:Выстрелов- ");
 		MTLCD_PRINT_NUMBER(85,2,get_current_max_shot());
+		MTLCD_PRINT_STRING(0,3,"С:Положение - ");
+		if (get_current_position() == CURRENT_POSITION_LIE) MTLCD_PRINT_STRING(85,3,"Лежка");
+		else if (get_current_position() == CURRENT_POSITION_STAND) MTLCD_PRINT_STRING(85,3,"Стойка");
 
 
+		MTLCD_PRINT_STRING(0,7,"# - Принять");
+	break;
 
-		MTLCD_PRINT_STRING(0,7,"* - Принять");
+	case CURRENT_STATE_INPUT_NUMBER:
+		MTLCD_PRINT_STRING(0,0,"Введите номер участника: ");
+		MTLCD_PRINT_NUMBER(20,1,get_current_number());
+		MTLCD_PRINT_STRING(0,7,"# - Принять   * - Отменить");
 	break;
 	}
 }
@@ -78,6 +89,16 @@ void MTLCD_print_targets(){
 		MTLCD_DATA(0x00);
 	}
 }
+
+void MTLCD_print_currnet_shot(){
+	MTLCD_PRINT_NUMBER(50,7,get_current_shot());
+}
+
+void MTLCD_print_currnet_number(){
+	MTLCD_PRINT_STRING(0,6,"#: ");
+	MTLCD_PRINT_NUMBER(20,6,get_current_number());
+}
+
 void MTLCD_accept_DB_port(){
 	  GPIO_HIGH(MTLCD_E_PORT,MTLCD_E_PIN); //cmd_port |= (1<<E);//устанавливаем "1" на E
 	  while_time(1);

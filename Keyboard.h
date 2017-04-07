@@ -6,6 +6,7 @@
 
 char KB_check();
 void KB_init();
+char get_current_number();
 
 
 
