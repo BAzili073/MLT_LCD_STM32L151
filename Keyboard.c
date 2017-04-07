@@ -1,7 +1,7 @@
 #include "Keyboard.h"
 #include "defines.h"
 #include "LCD_func.h"
-
+#include "Hardware.h"
 #define KB_DONT_PRESS 255
 
 #define KB_MAX_OUT 4
@@ -26,11 +26,6 @@
 #define KB_INP_2_PIN GPIO_PIN_13
 #define KB_INP_3_PIN GPIO_PIN_14
 #define KB_INP_4_PIN GPIO_PIN_15
-
-extern unsigned char CURRENT_STATE;
-extern unsigned char CURRENT_MODE;
-extern unsigned char MAX_SHOT;
-
 
 typedef struct KB_OUT_obj{
 	GPIO_TypeDef * port;
@@ -95,27 +90,27 @@ void KB_work(){
 	if (key != last_key){
 		last_key = key;
 		if ((key != KB_DONT_PRESS)){
-			switch (CURRENT_STATE){
+			switch (get_current_state()){
 				case CURRENT_STATE_START:
 				break;
 				case CURRENT_STATE_DEFAULT:
 					if (key == '*') {
 						MTLCD_CLR();
-						CURRENT_STATE = CURRENT_STATE_MENU_0;
+						set_current_state(CURRENT_STATE_MENU_0);
 					}
 				break;
 				case CURRENT_STATE_MENU_0:
 						if (key == 'A') {
-							CURRENT_MODE++;
-							if (CURRENT_MODE == 2) CURRENT_MODE = 0;
+							if (get_current_mode() == CURRENT_MODE_AUTO) set_current_mode(CURRENT_MODE_HAND);
+							else if (get_current_mode() == CURRENT_MODE_HAND) set_current_mode(CURRENT_MODE_AUTO);
 						}
 						if (key == 'B') {
-							if (MAX_SHOT == 5) MAX_SHOT = 8;
-							else MAX_SHOT = 5;
+							if (get_current_max_shot() == 5) set_current_max_shot(8);
+							else set_current_max_shot(5);
 						}
 						if (key == '*') {
 							MTLCD_CLR();
-							CURRENT_STATE = CURRENT_STATE_DEFAULT;
+							set_current_state(CURRENT_STATE_DEFAULT);
 						}
 				break;
 			}

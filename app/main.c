@@ -6,12 +6,6 @@
 #include "LCD_func.h"
 #include "Keyboard.h"
 
-
-unsigned char CURRENT_STATE = CURRENT_STATE_DEFAULT;
-unsigned char CURRENT_MODE = CURRENT_MODE_AUTO;
-unsigned char MAX_SHOT = 5;
-unsigned char TARGET[5] = {0,0,0,0,0};
-
 int main(void){
 
 	Clock_init();

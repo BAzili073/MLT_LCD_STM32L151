@@ -4,6 +4,7 @@
 #include "defines.h"
 #include "TIMs.h"
 #include "chars.h"
+#include "Hardware.h"
 
 #define MTLCD_DB0_PORT GPIOA
 #define MTLCD_DB0_PIN GPIO_PIN_11
@@ -34,37 +35,31 @@
 #define MTLCD_RES_PORT GPIOA
 #define MTLCD_RES_PIN GPIO_PIN_3
 
-
-
-extern unsigned char CURRENT_STATE;
-extern unsigned char CURRENT_MODE;
-extern unsigned char MAX_SHOT;
-extern unsigned char TARGET[5];
 void MTLCD_set_DB_port(unsigned char cmd);
 void MTLCD_accept_DB_port();
 void MTLCD_set_DB_port(unsigned char cmd);
 
 
 void MTLCD_DISPLAY(){
-	switch(CURRENT_STATE){
+	switch(get_current_state()){
 	case CURRENT_STATE_START:
 
 	break;
 	case CURRENT_STATE_DEFAULT:
 		MTLCD_PRINT_STRING(20,0,"Основная:");
-		if (CURRENT_MODE == CURRENT_MODE_AUTO) MTLCD_PRINT_STRING(113,0,"А");
-		else if (CURRENT_MODE == CURRENT_MODE_HAND) MTLCD_PRINT_STRING(113,0,"Р");
-		MTLCD_PRINT_NUMBER(120,0,MAX_SHOT);
+		if (get_current_max_shot() == CURRENT_MODE_AUTO) MTLCD_PRINT_STRING(113,0,"А");
+		else if (get_current_max_shot() == CURRENT_MODE_HAND) MTLCD_PRINT_STRING(113,0,"Р");
+		MTLCD_PRINT_NUMBER(120,0,get_current_max_shot());
 		MTLCD_print_targets();
 
 	break;
 	case CURRENT_STATE_MENU_0:
 		MTLCD_PRINT_STRING(20,0,"Настройки:");
 		MTLCD_PRINT_STRING(0,1,"A:Режим - ");
-		if (CURRENT_MODE == CURRENT_MODE_AUTO) MTLCD_PRINT_STRING(85,1,"Автом.");
-		else if (CURRENT_MODE == CURRENT_MODE_HAND) MTLCD_PRINT_STRING(85,1,"Ручной");
+		if (get_current_mode() == CURRENT_MODE_AUTO) MTLCD_PRINT_STRING(85,1,"Автом.");
+		else if (get_current_mode() == CURRENT_MODE_HAND) MTLCD_PRINT_STRING(85,1,"Ручной");
 		MTLCD_PRINT_STRING(0,2,"B:Выстрелов- ");
-		MTLCD_PRINT_NUMBER(85,2,MAX_SHOT);
+		MTLCD_PRINT_NUMBER(85,2,get_current_max_shot());
 
 
 
@@ -77,7 +72,7 @@ void MTLCD_print_targets(){
 	MTLCD_set_cord(0,7);
 	int i;
 	for (i = 0;i<5;i++){
-		if (TARGET[i]) MTLCD_PRINT_BLOCK(FULL_CIRC);
+		if (get_target(i)) MTLCD_PRINT_BLOCK(FULL_CIRC);
 		else MTLCD_PRINT_BLOCK(EMPTY_CIRC);
 		MTLCD_DATA(0x00);
 		MTLCD_DATA(0x00);
